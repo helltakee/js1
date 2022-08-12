@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Тренер</title>
+
+    <link rel="stylesheet" href="/src/assets/css/main.css">
+    <link rel="stylesheet/less" href="/src/assets/less/main.less">
+    <link rel="stylesheet" href="/src/assets/css/itc-slider.min.css">
+
+
+    <script src="/src/assets/js/less.min.js"></script>
+
+</head>
+
+<body>
+    <section class="header">
+        <div class="header-main">
+            <div class="logo1"><img src="/src/assets/img/5d8634bea4e6516d543e08d3.png" alt=""></div>
+            <ul class="menu" id="menu">
+                <li>ПУНКТ</li>
+                <li>ПУНКТ</li>
+                <li>ПУНКТ</li>
+            </ul>
+            <div class="logo2"><img src="/src/assets/img/5d8634bea4e6516d543e08d3.png" alt=""></div>
+        </div>
+        <div class="burger-menu_button" id="burgerBtn">
+            <span class="burger-menu_lines"></span>
+        </div>
+        <nav class="header-menu active" id="menu1">
+            <ul class="main-menu" id="menu1">
+                <li>ПУНКТ</li>
+                <li>ПУНКТ</li>
+                <li>ПУНКТ</li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="first">
+        <div class="slider" data-slider="itc-slider" data-loop="true" data-autoplay="true" data-interval="3000">
+            <ol class="slider__indicators">
+                <li data-slide-to="0"></li>
+                <li data-slide-to="1"></li>
+                <li data-slide-to="2"></li>
+            </ol>
+            <div class="slider__wrapper">
+                <div class="slider__items">
+                    <div class="slider__item">
+                        <!-- Контент 1 слайда -->
+                        <img src="/src/assets/img/slider1.jpg" alt="">
+                    </div>
+                    <div class="slider__item">
+                        <!-- Контент 2 слайда -->
+                        <img src="/src/assets/img/slider2.jpg" alt="">
+                    </div>
+                    <div class="slider__item">
+                        <!-- Контент 3 слайда -->
+                        <img src="/src/assets/img/slider3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Кнопки для перехода к предыдущему и следующему слайду -->
+            <button class="slider__control" data-slide="prev"></button>
+            <button class="slider__control" data-slide="next"></button>
+        </div>
+    </section>
+
+    <section class="second">
+        <div class="accordion">
+            <div class="accordion-item">
+                <!-- // Либо type = 'checkbox' без name -->
+                <input class="accordion-item__input" type="radio" name="accordion" id="accordion1">
+                <label class="accordion-item__trigger" for="accordion1">
+                    Trigger 1
+                </label>
+                <div class="accordion-item__content">
+                    Content 1
+                </div>
+            </div>
+            <div class="accordion-item">
+                <input class="accordion-item__input" type="radio" name="accordion" id="accordion2">
+                <label class="accordion-item__trigger" for="accordion2">
+                    Trigger 2
+                </label>
+                <div class="accordion-item__content">
+                    Content 2
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="third">
+        <!-- Кнопка для открытия модального -->
+        <button onclick="document.getElementById('id01').style.display='block'">Регистрация</button>
+
+        <!-- Модальный (содержит форму регистрации) -->
+        <div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                title="Закрыть модальный">Закрыть</span>
+            <form class="modal-content" action="/action_page.php">
+                <div class="container">
+                    <h1>Форма регистрации</h1>
+                    <hr>
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Введите вашу почту" name="email" required>
+
+                    <label for="psw"><b>Пароль</b></label>
+                    <input type="password" placeholder="Введите пароль" name="psw" required>
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомнить
+                        меня
+                    </label>
+
+                    <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и
+                            конфиденциальность</a>.</p>
+
+                    <div class="clearfix">
+                        <button type="submit" class="signup">Регистрация</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+<script src="/src/assets/js/less.min.js"></script>
+<script src="/src/assets/js/script.js"></script>
+<script src="/src/assets/js/itc-slider.min.js" defer></script>
+
+</html>

@@ -1,0 +1,346 @@
+.header {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  @media screen and (max-width: 540px) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .header-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .logo1 {
+      img {
+        max-width: 200px;
+        min-width: 80px;
+        width: 100%;
+
+        @media screen and (max-width: 540px) {
+          max-width: 100px;
+          width: 100%;
+        }
+      }
+    }
+
+    .logo2 {
+      img {
+        max-width: 200px;
+        min-width: 80px;
+        width: 100%;
+
+        @media screen and (max-width: 540px) {
+          display: none;
+        }
+      }
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 100px;
+      padding-right: 40px;
+
+      @media screen and (max-width: 700px) {
+        gap: 20px;
+      }
+
+      @media screen and (max-width: 540px) {
+        display: none;
+      }
+
+      li {
+        font-size: 1.5rem;
+        color: dodgerblue;
+        list-style-type: none;
+      }
+    }
+  }
+  .header-menu {
+    gap: 10px;
+    color: dodgerblue;
+    position: relative;
+    display: flex;
+    .main-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      gap: 10px;
+      padding-right: 40px;
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+  .header-menu.active {
+    display: none;
+  }
+
+  .burger-menu_button {
+    cursor: pointer;
+    display: none;
+  }
+
+  @media screen and (max-width: 1200px) {
+  }
+
+  @media screen and (max-width: 540px) {
+    .burger-menu_button {
+      display: flex;
+      position: relative;
+      z-index: 30;
+      width: 45px;
+      height: 45px;
+      -webkit-transition: 0.4s;
+      -moz-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s;
+    }
+  }
+
+  .burger-menu_button:hover .burger-menu_lines {
+    filter: brightness(0.7);
+  }
+
+  .burger-menu_lines::before,
+  .burger-menu_lines::after,
+  .burger-menu_lines {
+    position: absolute;
+    width: 35px;
+    height: 3px;
+    background-color: dodgerblue;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .burger-menu_lines {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .burger-menu_lines::before {
+    content: "";
+    top: -12px;
+  }
+
+  .burger-menu_lines::after {
+    content: "";
+    top: 12px;
+  }
+
+  .burger-menu_button.active .burger-menu_lines::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .burger-menu_button.active .burger-menu_lines::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .burger-menu_button.active .burger-menu_lines {
+    background-color: transparent;
+  }
+}
+
+.first {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  .slider {
+    overflow: hidden;
+    .slider__wrapper {
+      .slider__items {
+        max-height: 400px;
+        .slider__item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            max-width: 100%;
+            height: 400px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+.second {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+    .accordion-item {
+      position: relative;
+      margin-bottom: 20px;
+      .accordion-item__input {
+        position: absolute;
+        opacity: 0;
+      }
+      .accordion-item__input:checked ~ .accordion-item__trigger {
+        background-color: #eee;
+      }
+      .accordion-item__input:checked ~ .accordion-item__content {
+        display: block;
+        background-color: #eee;
+      }
+      .accordion-item__trigger {
+        display: block;
+        padding: 20px;
+        border: 1px solid black;
+      }
+      .accordion-item__content {
+        padding: 20px;
+        border: 1px solid black;
+        border-top: none;
+        display: none;
+      }
+    }
+  }
+}
+
+.third {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  * {
+    box-sizing: border-box;
+  }
+  /* Поля ввода полной ширины */
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  /* Добавить цвет фона, когда входы получают фокус */
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  /* Установите стиль для всех кнопок */
+  button {
+    background-color: #474e5d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    max-width: 500px;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+
+  /* Поплавок очистить и кнопки регистрации и добавить равную ширину */
+  .cancelbtn,
+  .signupbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+  }
+
+  /* Добавить отступы к элементам контейнера */
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+    padding: 16px;
+  }
+
+  /* Модальный (фон) */
+  .modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    // height: 100%; /* Полный высота */
+    overflow: auto; /* Включите прокрутку, если это необходимо */
+    background-color: #474e5d;
+    padding-top: 50px;
+  }
+
+  /* Модальное Содержание/Бокс */
+  .modal-content {
+    max-width: 550px;
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% сверху, 15% снизу и по центру */
+    border: 1px solid #888;
+    width: 100%; /* Может быть больше или меньше, в зависимости от размера экрана */
+  }
+
+  /* Стиль горизонтальной линейки */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  /* кнопка закрытия (x) */
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #f44336;
+    cursor: pointer;
+  }
+  .clearfix {
+    display: flex;
+    justify-content: center;
+  }
+  /* Снимите поплавки */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Измените стили для кнопки отмены и кнопки регистрации на дополнительных маленьких экранах */
+  @media screen and (max-width: 300px) {
+    .cancelbtn,
+    .signupbtn {
+      width: 100%;
+    }
+  }
+}
